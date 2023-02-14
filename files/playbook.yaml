@@ -1,0 +1,13 @@
+---
+- name: "Installing Web Server"
+  hosts: myself
+  connection: local
+  tasks:
+    - name: Ensure Nginx is running at the latest version
+      apt:
+        name: nginx
+        state: latest
+    - name: Ensure that the nginx service is running.
+      service:
+        name: nginx
+        state: started
